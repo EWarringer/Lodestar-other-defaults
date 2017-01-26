@@ -1,6 +1,17 @@
 source 'https://rubygems.org'
 
-
+gem 'rake'
+gem 'pg'
+gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'rspec-rails', group: [:development, :test]
+gem 'capybara', group: [:development, :test]
+gem 'launchy', group: [:development, :test]
+gem 'factory_girl', group: [:development, :test]
+gem 'valid_attribute', group: [:development, :test]
+gem 'shoulda-matchers', group: [:development, :test], require: false
+gem 'devise'
+gem 'foundation-rails'
+gem 'nokogiri'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
@@ -33,6 +44,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'pry-rails'
+  gem 'faker'
 end
 
 group :development do
@@ -42,6 +55,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'quiet_assets'
+end
+
+group :test do
+  gem 'poltergeist'
+  gem 'database_cleaner'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
